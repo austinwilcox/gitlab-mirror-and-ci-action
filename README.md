@@ -1,4 +1,6 @@
-# Mirror to GitLab and trigger GitLab CI
+# Forked from [https://github.com/SvanBoxel/gitlab-mirror-and-ci-action](https://github.com/SvanBoxel/gitlab-mirror-and-ci-action)
+
+## Mirror to GitLab and trigger GitLab CI
 
 A GitHub Action that mirrors all commits to GitLab, triggers GitLab CI, and returns the results back to GitHub. 
 
@@ -37,5 +39,7 @@ If you're rewriting history in the primary repo (e.g by using `git rebase`), you
 
 If you want to mirror repository tags too, you can define `FOLLOW_TAGS` environment variable to `true`.
 
-## Updates
+## Updates by Me
 My version here does not check pipeline runs, I gutted that out of the code, this will be used just for mirroring code from github over to gitlab as a backup.
+
+My modifications revolve around just the entrypoint.sh file.
