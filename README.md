@@ -7,7 +7,7 @@ A GitHub Action that mirrors all commits to GitLab, triggers GitLab CI, and retu
 This is an example of a pipeline that uses this action:
 
 ```workflow
-name: Mirror and run GitLab CI
+name: Mirror
 
 on: [push]
 
@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - name: Mirror + trigger CI
+    - name: Mirror
       uses: austinwilcox/gitlab-mirror-and-ci-action@master
       with:
         args: "https://gitlab.com/<namespace>/<repository>"
@@ -24,7 +24,7 @@ jobs:
         FOLLOW_TAGS: "false"
         FORCE_PUSH: "false"
         GITLAB_HOSTNAME: "gitlab.com"
-        GITLAB_USERNAME: "svboxel"
+        GITLAB_USERNAME: "austinwilcox21"
         GITLAB_PASSWORD: ${{ secrets.GITLAB_PASSWORD }} // Generate here: https://gitlab.com/profile/personal_access_tokens
         GITLAB_PROJECT_ID: "<GitLab project ID>" // https://gitlab.com/<namespace>/<repository>/edit
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} // https://docs.github.com/en/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
