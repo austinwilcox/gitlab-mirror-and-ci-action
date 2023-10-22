@@ -1,6 +1,6 @@
 # Forked from [https://github.com/SvanBoxel/gitlab-mirror-and-ci-action](https://github.com/SvanBoxel/gitlab-mirror-and-ci-action)
 
-## Mirror to GitLab and trigger GitLab CI
+## Mirror to GitLab
 
 A GitHub Action that mirrors all commits to GitLab, triggers GitLab CI, and returns the results back to GitHub. 
 
