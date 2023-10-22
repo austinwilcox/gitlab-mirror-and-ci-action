@@ -2,8 +2,6 @@
 
 A GitHub Action that mirrors all commits to GitLab, triggers GitLab CI, and returns the results back to GitHub. 
 
-This action uses active polling to determine whether the GitLab pipeline is finished. This means our GitHub Action will run for the same amount of time as it takes for GitLab CI to finish the pipeline. 
-
 ## Example workflow
 
 This is an example of a pipeline that uses this action:
@@ -19,7 +17,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Mirror + trigger CI
-      uses: SvanBoxel/gitlab-mirror-and-ci-action@master
+      uses: austinwilcox/gitlab-mirror-and-ci-action@master
       with:
         args: "https://gitlab.com/<namespace>/<repository>"
       env:
@@ -40,3 +38,6 @@ For granular permissions create seperate users and tokens in GitLab with restric
 If you're rewriting history in the primary repo (e.g by using `git rebase`), you'll need to force push. Set the `FORCE_PUSH` environment variable to `true` to enable this. This will overwrite history in the mirror as well, so be **careful with this** (just like any time you're using `git push --force`).
 
 If you want to mirror repository tags too, you can define `FOLLOW_TAGS` environment variable to `true`.
+
+## Updates
+My version here does not check pipeline runs, I gutted that out of the code, this will be used just for mirroring code from github over to gitlab as a backup.
